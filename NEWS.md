@@ -1,3 +1,6 @@
+# fix a bug about tolerance(20240227)
+- fix a bug about tolerance when testing
+
 # add citation in version 1.2.3(20220525)
 - fix a bug when Txdb have no gene scaffold
 
