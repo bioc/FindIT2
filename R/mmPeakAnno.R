@@ -5,7 +5,7 @@ utils::globalVariables(c("feature_id", "gene_id"))
 #' Annotate peaks using nearest gene mode, which means every peak only have one
 #' related gene.
 #'
-#' @import GenomeInfoDb GenomicFeatures S4Vectors BiocGenerics GenomicRanges
+#' @import Seqinfo GenomicFeatures S4Vectors BiocGenerics GenomicRanges
 #'
 #' @param peak_GR peak GRange with a column named feature_id representing you
 #' peak name
@@ -142,7 +142,7 @@ mm_nearestGene <- function(peak_GR,
 #' Annotate peaks using geneScan mode, which means every peak have more than one
 #' related genes.
 #'
-#' @import GenomeInfoDb GenomicFeatures S4Vectors BiocGenerics GenomicRanges
+#' @import Seqinfo GenomicFeatures S4Vectors BiocGenerics GenomicRanges
 #'
 #' @param peak_GR peak GRange with a column named feature_id representing you peak name
 #' @param Txdb Txdb
@@ -310,7 +310,7 @@ mm_geneScan <- function(peak_GR,
 #' find related peaks of your input genes, which is useful when you want to plot
 #' volcano plot or heatmap of peaks.
 #'
-#' @import GenomeInfoDb GenomicFeatures S4Vectors BiocGenerics GenomicRanges
+#' @import Seqinfo GenomicFeatures S4Vectors BiocGenerics GenomicRanges
 #' @importFrom utils capture.output
 #'
 #' @param peak_GR peak GRange with a column named feature_id representing you peak name

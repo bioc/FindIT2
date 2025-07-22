@@ -82,7 +82,7 @@ findIT_regionRP <- function(regionRP,
     # warning will appear firstly
     withr::local_options(list(warn = 1))
     all_geneSets <- GenomicFeatures::genes(Txdb)
-    all_geneSets <- names(all_geneSets[GenomeInfoDb::seqnames(all_geneSets) %in% Chrs_included])
+    all_geneSets <- names(all_geneSets[Seqinfo::seqnames(all_geneSets) %in% Chrs_included])
 
     if (mean(input_genes %in% all_geneSets) < 1) {
         dropN <- sum(!input_genes %in% all_geneSets)
@@ -503,7 +503,7 @@ findIT_TFHit <- function(input_genes,
     }
 
     gene_location <- GenomicFeatures::genes(Txdb)
-    all_geneSets <- names(gene_location[GenomeInfoDb::seqnames(gene_location) %in% Chrs_included])
+    all_geneSets <- names(gene_location[Seqinfo::seqnames(gene_location) %in% Chrs_included])
 
     if (mean(input_genes %in% all_geneSets) < 1) {
         dropN <- sum(!input_genes %in% all_geneSets)

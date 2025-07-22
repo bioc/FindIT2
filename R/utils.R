@@ -1,4 +1,4 @@
-#' @importFrom GenomeInfoDb seqlevels
+#' @importFrom Seqinfo seqlevels
 check_seqlevel <- function(peak_GR, Txdb, print_ChrN = 10) {
     if (length(seqlevels(peak_GR)) > print_ChrN) {
         peakGR_level <- paste(seqlevels(peak_GR)[seq_len(print_ChrN)],

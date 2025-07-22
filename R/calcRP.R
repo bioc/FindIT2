@@ -296,10 +296,10 @@ calcRP_region <- function(mmAnno,
     )
 
     if (missing(Chrs_included)) {
-        Chrs_included <- GenomeInfoDb::seqlevels(Txdb)
+        Chrs_included <- Seqinfo::seqlevels(Txdb)
     }
     all_gene_location <- GenomicFeatures::genes(Txdb)
-    all_gene_location <- all_gene_location[GenomeInfoDb::seqnames(all_gene_location) %in% Chrs_included]
+    all_gene_location <- all_gene_location[Seqinfo::seqnames(all_gene_location) %in% Chrs_included]
 
 
     gene_scaned <- all_gene_location[mmAnno$gene_id]
@@ -334,7 +334,7 @@ calcRP_region <- function(mmAnno,
     }
 
     noRPGene_df <- data.frame(
-        seqnames = as.character(GenomeInfoDb::seqnames(all_gene_location[noRPGene])),
+        seqnames = as.character(Seqinfo::seqnames(all_gene_location[noRPGene])),
         gene_id = noRPGene,
         sumRP = 0,
         stringsAsFactors = FALSE
